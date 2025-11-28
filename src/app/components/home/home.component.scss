@@ -1,0 +1,194 @@
+:host {
+  --navy: #0a1a2f;
+  --black: #111;
+  --white: #fff;
+  --dark-gray: #4a4a4a;
+  --lin: #0077b5;
+  --github: #333;
+  --transition: 0.3s ease;
+
+  .homeContainer {
+    display: flex;
+    color: var(--black);
+    background: linear-gradient(
+        to right,
+        rgba(197, 225, 235, 0.8),
+        rgba(193, 187, 218, 0.8)
+    ),
+    url(../../../assets/img/subtle-prism.svg);
+    background-position: center;
+    height: 100vh;
+    position: relative;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 95%, 50% 100%, 0% 95%);
+  }
+
+  /* LEFT SIDE SOCIAL ICONS - FIXED */
+  .socialIcons {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    left: 0;
+    top: 25%;
+    height: fit-content;
+    z-index: 10;
+
+    .button {
+      display: flex;
+      align-items: center;
+      width: 60px;
+      height: 60px;
+      margin: 5px 0;
+      border-radius: 50px;
+      cursor: pointer;
+      overflow: hidden;
+      box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
+      background-color: var(--white);
+      transition: var(--transition);
+      position: relative;
+
+      .icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 60px;
+        width: 60px;
+        min-width: 60px;
+        font-size: 25px;
+        border-radius: 50px;
+        transition: background 0.3s, color 0.3s;
+        z-index: 2;
+      }
+
+      span {
+        color: #0a1a2f;
+        font-size: 16px;
+        font-weight: 500;
+        margin-left: 15px;
+        white-space: nowrap;
+        opacity: 0;
+        transition: opacity 0.3s;
+        position: absolute;
+        left: 70px;
+        z-index: 1;
+      }
+
+      &:hover {
+        width: 160px;
+
+        span {
+          opacity: 1;
+        }
+      }
+    }
+
+    /* LinkedIn */
+    .linBtn:hover .icon {
+      background: var(--lin);
+      color: white;
+    }
+
+    /* GitHub */
+    .gitBtn:hover .icon {
+      background: var(--github);
+      color: white;
+    }
+  }
+
+
+  .homeContent {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 90%;
+  }
+
+  .homeContent .name {
+    font-size: 5rem;
+    text-transform: uppercase;
+    text-align: center;
+    color: var(--navy);
+    font-weight: 700;
+    letter-spacing: 2px;
+    white-space: normal;
+    line-height: 60px;
+  }
+
+  .homeContent .info p {
+    font-family: var(--font-mono), "Malgun Gothic";
+    font-size: 1.1rem;
+    max-width: 700px;
+    color: var(--dark-gray);
+    margin: 0 auto 1.5rem auto;
+    opacity: 1;
+    animation: fadeIn 1.2s ease-out forwards;
+  }
+
+  .homeContent .btn button {
+    margin-top: 25px;
+    padding: 15px 40px;
+    border: 2px solid var(--navy);
+    background: transparent;
+    color: var(--navy);
+    font-weight: 700;
+    cursor: pointer;
+    transition: var(--transition);
+
+    &:hover {
+      background: var(--navy);
+      color: white;
+    }
+  }
+
+  /* Scroll Down Arrows */
+  .scrollDown {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+
+    span {
+      position: absolute;
+      width: 25px;
+      height: 25px;
+      border-right: 2px solid var(--black);
+      border-bottom: 2px solid var(--black);
+      animation: scrollArrow 2s infinite;
+    }
+
+    span:nth-child(1) {
+      animation-delay: -0.4s;
+    }
+
+    span:nth-child(2) {
+      animation-delay: -0.2s;
+    }
+  }
+
+  /* KEYFRAMES */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes scrollArrow {
+    0% {
+      opacity: 0;
+      transform: translate(-10px, -10px);
+    }
+    50% {
+      opacity: 0.8;
+    }
+    100% {
+      opacity: 0;
+      transform: translate(10px, 10px);
+    }
+  }
+}

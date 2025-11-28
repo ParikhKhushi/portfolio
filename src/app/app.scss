@@ -1,0 +1,84 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* NAVBAR */
+.navbar {
+  width: 100%;
+  background: #00111f;
+  display: flex;
+  align-items: center;
+  padding: 12px 24px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+/* NAME / TITLE */
+.name {
+  font-family: 'Pacifico', cursive;
+  font-size: 26px;
+  color: #00e0c6;
+  margin: 0;
+}
+
+/* SPACER pushes menu + logo to right side */
+.spacer {
+  flex: 1 1 auto;
+}
+
+/* MENU BUTTONS */
+.navbar button {
+  background: transparent !important;
+  border: none;
+  font-size: 16px;
+  color: #00e0c6;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 8px 14px;
+  position: relative;
+  letter-spacing: 1px;
+}
+
+/* Hover effect */
+.navbar button:hover {
+  color: #9fe4db;
+}
+
+/* Bottom underline animation */
+.navbar button::after {
+  content: "";
+  width: 0%;
+  height: 2px;
+  background-color: #00e0c6;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  transition: 0.3s ease;
+}
+
+.navbar button:hover::after {
+  width: 100%;
+}
+
+/* LOGO (Right side) */
+img {
+  width: auto;
+  height: 55px;
+  border-radius: 6px;
+  border: 2px solid #fff;
+  transition: transform 0.2s ease;
+  margin-left: 16px;
+}
+
+img:hover {
+  transform: scale(1.1);
+}
+
+/* MAIN SCREEN BACKGROUND */
+.screen {
+  height: 100%;
+  width: 100dvw;
+  background: #f8fbe2;
+}
